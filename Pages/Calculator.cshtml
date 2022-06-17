@@ -1,0 +1,27 @@
+﻿@page "/services/calculator"
+@model zad3.Pages.calculatorModel
+@{
+    string operand1 = Model.operand1;
+    string operand2 = Model.operand2;
+    string operation = Model.operation;
+    int result = Model.result;
+    bool isValid = Model.isValid;
+}
+<html>
+    <head>
+        <title>Calculator</title>
+    </head>
+    
+    @if(isValid)
+    {   
+        <body>
+            @operand1 @operation @operand2 -> @result
+        </body>
+    } else
+    {
+        <body>
+            INVALID OPERАTION - parameters "operand1" and "operand2" are required and should be integer values, "operation" is required and the value should be one of: "plus", "minus", "multiply-by", "divide-by".
+        </body>
+    }
+    
+</html>
